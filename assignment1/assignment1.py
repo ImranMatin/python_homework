@@ -20,6 +20,10 @@ def calc(a, b, operation="multiply"):
             return a / b
         if operation == "modulo":
             return a % b
+        if operation == "int_divide":
+            return a // b
+        if operation == "power":
+            return a ** b
     except ZeroDivisionError:
         return "You can't divide by 0!"
     except TypeError:
@@ -60,7 +64,10 @@ def grade(*args):
 
 
 def repeat(string, count):
-    return string * count
+    result = ""
+    for _ in range(count):
+        result += string
+    return result
 
 
 def student_scores(mode, **kwargs):
